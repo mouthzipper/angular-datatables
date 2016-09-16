@@ -1,1 +1,1 @@
-export * from './lib/angular-datatables';
+export * from './dist/angular-datatables';

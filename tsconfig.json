@@ -12,7 +12,8 @@
     "outDir": "./dist",
     "declaration": true
   },
-  "file": [
+  "files": [
+    "src/angular-datatables.ts",
     "src/angular-datatables.directive.ts",
     "typings/index.d.ts"
   ]
