@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import {DataTable} from './datatable.directive';
+import {DataTable} from './angular-datatables.directive';
 
 describe('Directive: Datatable', () => {
   it('should create an instance', () => {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataTable } from 'angular-datatables';
 
 @Component({
     selector: 'my-app',
@@ -31,7 +30,6 @@ import { DataTable } from 'angular-datatables';
           </tr>
           </tbody>
       </table>
-    `,
-    directives: [DataTable]
+    `
 })
 export class AppComponent { }
