@@ -20,7 +20,10 @@
     "DataTables",
     "Example"
   ],
-  "author": "l-lin",
+  "author": "Louis LIN <louis.lin.87@gmail.com> (https://l-lin.github.io/)",
+  "contributors": [
+    "Michael Bennett <michael@strukt.org>"
+  ],
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0",

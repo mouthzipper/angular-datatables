@@ -1,0 +1,1 @@
+{"version":3,"file":"angular-datatables.js","sourceRoot":"","sources":["../src/angular-datatables.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAuB,eAAe,CAAC,CAAA;AACvC,6CAAwB,gCAAgC,CAAC,CAAA;AAMzD;IAAA;IAA+B,CAAC;IAJhC;QAAC,eAAQ,CAAC;YACN,YAAY,EAAE,CAAC,wCAAS,CAAC;YACzB,OAAO,EAAE,CAAC,wCAAS,CAAC;SACvB,CAAC;;wBAAA;IAC6B,uBAAC;AAAD,CAAC,AAAhC,IAAgC;AAAnB,wBAAgB,mBAAG,CAAA"}

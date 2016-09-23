@@ -1,11 +1,11 @@
 // #docregion
 module.exports = function(config) {
 
-  var appBase    = 'src/';       // transpiled app JS and map files
+  var appBase    = 'dist/';       // transpiled app JS and map files
   var appSrcBase = 'src/';       // app source TS files
   var appAssets  = '/base/src/'; // component assets fetched by Angular's compiler
 
-  var testBase    = 'src/';       // transpiled test JS and map files
+  var testBase    = 'dist/';       // transpiled test JS and map files
   var testSrcBase = 'src/';       // test source TS files
 
   config.set({
@@ -43,22 +43,21 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/fake-async-test.js',
 
       // RxJs
-      { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
-      { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
+      {pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false},
+      {pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false},
 
       // Paths loaded via module imports:
       // Angular itself
       {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
       {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
 
-      {pattern: 'systemjs.config.js', included: false, watched: false},
-      {pattern: 'systemjs.config.extras.js', included: false, watched: false},
-      'karma-test-shim.js',
+      // {pattern: 'systemjs.config.js', included: false, watched: false},
+      // {pattern: 'systemjs.config.extras.js', included: false, watched: false},
+      // 'karma-test-shim.js',
 
       // transpiled application & spec code paths loaded via module imports
       {pattern: appBase + '**/*.js', included: false, watched: true},
       {pattern: testBase + '**/*.js', included: false, watched: true},
-
 
       // Asset (HTML & CSS) paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)

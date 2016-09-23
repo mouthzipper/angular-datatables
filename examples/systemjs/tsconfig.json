@@ -9,6 +9,5 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
-//    "outDir": "dist"
   }
 }
