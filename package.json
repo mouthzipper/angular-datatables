@@ -6,15 +6,18 @@
     "lint": "tslint ./src/**/*.ts -t verbose",
     "lite": "lite-server",
     "postinstall": "typings install",
+    "clean": "rm -f src/*.d.ts src/*.js src/*.map",
     "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "test-once": "tsc && karma start karma.conf.js --single-run",
+    "test-once": "tsc && karma start karma.conf.js --single-run && npm run clean",
     "typings": "typings",
     "webdriver:update": "webdriver-manager update",
 
+    "move": "mkdir dist && mv src/*.d.ts dist && mv src/*.js dist && mv src/*.map dist",
+    "rm-spec": "rm -f dist/*.spec.*",
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "build": "rm -rf dist/ && npm run lint && npm run tsc"
+    "build": "rm -rf dist/ && npm run lint && npm run tsc && npm run move && npm run rm-spec"
   },
   "keywords": [
     "Angular",

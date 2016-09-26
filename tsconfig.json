@@ -9,12 +9,12 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./dist",
     "declaration": true
   },
   "files": [
     "src/angular-datatables.ts",
     "src/angular-datatables.directive.ts",
+    "src/angular-datatables.directive.spec.ts",
     "typings/index.d.ts"
   ]
 }
