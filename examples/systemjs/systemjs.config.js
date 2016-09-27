@@ -26,6 +26,8 @@
             // other libraries
             'rxjs':                       'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+
+            // angular-datatables dependencies
             'jquery':                     'npm:jquery/dist/jquery.js',
             'datatables.net':             'npm:datatables.net/js/jquery.dataTables.js',
             'angular-datatables':         'npm:angular-datatables'
