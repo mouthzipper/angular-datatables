@@ -7,8 +7,8 @@
     "lite": "lite-server",
     "postinstall": "typings install",
     "clean": "rm -f src/*.d.ts src/*.js src/*.map",
-    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "test-once": "tsc && karma start karma.conf.js --single-run && npm run clean",
+    "test": "npm run clean && tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
+    "test-once": "npm run clean && tsc && karma start karma.conf.js --single-run && npm run clean",
     "typings": "typings",
     "webdriver:update": "webdriver-manager update",
 
@@ -58,6 +58,7 @@
     "typings": "^1.0.4",
 
     "canonical-path": "0.0.2",
+    "concat-cli": "4.0.0",
     "http-server": "^0.9.0",
     "tslint": "^3.7.4",
     "lodash": "^4.11.1",

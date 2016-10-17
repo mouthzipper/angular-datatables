@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var angular_datatables_dtOptions_1 = require('./angular-datatables.dtOptions');
+exports.DTOptions = angular_datatables_dtOptions_1.DTOptions;
 var core_1 = require('@angular/core');
 var angular_datatables_directive_1 = require('./angular-datatables.directive');
 var DataTablesModule = (function () {

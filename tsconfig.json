@@ -15,6 +15,7 @@
     "src/angular-datatables.ts",
     "src/angular-datatables.directive.ts",
     "src/angular-datatables.directive.spec.ts",
+    "src/angular-datatables.dtOptions.ts",
     "typings/index.d.ts"
   ]
 }
