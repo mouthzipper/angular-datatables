@@ -17,10 +17,15 @@ require('datatables.net');
 var DataTable = (function () {
     function DataTable(el) {
         this.el = el;
+        this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
     }
     DataTable.prototype.ngOnInit = function () {
-        $(this.el.nativeElement).DataTable();
+        $(this.el.nativeElement).DataTable(this.dtOptions);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DataTable.prototype, "dtOptions", void 0);
     DataTable = __decorate([
         core_1.Directive({
             selector: '[datatable]'
