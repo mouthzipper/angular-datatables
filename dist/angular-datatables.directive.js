@@ -14,26 +14,26 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = require('@angular/core');
 require('jquery');
 require('datatables.net');
-var DataTable = (function () {
-    function DataTable(el) {
+var DataTableDirective = (function () {
+    function DataTableDirective(el) {
         this.el = el;
         this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
     }
-    DataTable.prototype.ngOnInit = function () {
-        $(this.el.nativeElement).DataTable(this.dtOptions);
+    DataTableDirective.prototype.ngOnInit = function () {
+        this.dtInstance = $(this.el.nativeElement).DataTable(this.dtOptions);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], DataTable.prototype, "dtOptions", void 0);
-    DataTable = __decorate([
+    ], DataTableDirective.prototype, "dtOptions", void 0);
+    DataTableDirective = __decorate([
         core_1.Directive({
             selector: '[datatable]'
         }),
         __param(0, core_1.Inject(core_1.ElementRef)), 
         __metadata('design:paramtypes', [core_1.ElementRef])
-    ], DataTable);
-    return DataTable;
+    ], DataTableDirective);
+    return DataTableDirective;
 }());
-exports.DataTable = DataTable;
+exports.DataTableDirective = DataTableDirective;
 //# sourceMappingURL=angular-datatables.directive.js.map

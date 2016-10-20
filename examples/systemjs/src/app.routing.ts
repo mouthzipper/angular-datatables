@@ -5,23 +5,29 @@ import { ZeroConfigComponent } from './basic/zero-config.component';
 import { WithOptionsComponent } from './basic/with-options.component';
 import { WithAjaxComponent } from './basic/with-ajax.component';
 
+import { DtInstanceComponent } from './advanced/dt-instance.component';
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/zero-config',
+    redirectTo: '/basic/zero-config',
     pathMatch: 'full'
   },
   {
-    path: 'zero-config',
+    path: 'basic/zero-config',
     component: ZeroConfigComponent
   },
   {
-    path: 'with-options',
+    path: 'basic/with-options',
     component: WithOptionsComponent
   },
   {
-    path: 'with-ajax',
+    path: 'basic/with-ajax',
     component: WithAjaxComponent
+  },
+  {
+    path: 'advanced/dt-instance',
+    component: DtInstanceComponent
   }
 ];
 

@@ -2,12 +2,17 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DataTablesModule } from 'angular-datatables';
 
+import { AppRoutingModule } from './app.routing';
+
 import { AppComponent } from './app.component';
+
+// Basic examples
 import { ZeroConfigComponent }  from './basic/zero-config.component';
 import { WithOptionsComponent }  from './basic/with-options.component';
 import { WithAjaxComponent }  from './basic/with-ajax.component';
 
-import { AppRoutingModule } from './app.routing';
+// Advanced examples
+import { DtInstanceComponent } from './advanced/dt-instance.component';
 
 @NgModule({
   imports: [
@@ -20,7 +25,9 @@ import { AppRoutingModule } from './app.routing';
 
     ZeroConfigComponent,
     WithOptionsComponent,
-    WithAjaxComponent
+    WithAjaxComponent,
+
+    DtInstanceComponent
   ],
   bootstrap: [ AppComponent ]
 })

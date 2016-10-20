@@ -6,10 +6,19 @@ declare var $: any;
 @Directive({
   selector: '[datatable]'
 })
-export class DataTable implements OnInit {
-  el: ElementRef;
+export class DataTableDirective implements OnInit {
+  private el: ElementRef;
+
   @Input()
   dtOptions: any;
+
+  /**
+   * The DataTable instance built by the jQuery library [DataTables](datatables.net).
+   *
+   * It's possible to execute the [DataTables APIs](https://datatables.net/reference/api/) with
+   * this variable.
+   */
+  dtInstance: any;
 
   constructor(@Inject(ElementRef) el: ElementRef) {
     this.el = el;
@@ -17,6 +26,6 @@ export class DataTable implements OnInit {
   }
 
   ngOnInit(): any {
-    $(this.el.nativeElement).DataTable(this.dtOptions);
+    this.dtInstance = $(this.el.nativeElement).DataTable(this.dtOptions);
   }
 }

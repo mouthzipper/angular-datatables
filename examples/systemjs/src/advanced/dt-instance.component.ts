@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { DataTableDirective } from 'angular-datatables';
 
 @Component({
   moduleId: module.id,
-  selector: 'with-ajax',
-  templateUrl: 'with-ajax.component.html'
+  selector: 'dt-instance',
+  templateUrl: 'dt-instance.component.html'
 })
-export class WithAjaxComponent {
+export class DtInstanceComponent {
+  @ViewChild(DataTableDirective)
+  private datatable: DataTableDirective;
+
   dtOptions: any = {};
 
   constructor() {
@@ -23,5 +28,9 @@ export class WithAjaxComponent {
         data: 'lastName'
       }]
     };
+  }
+
+  foobar(): void {
+    console.log(this.datatable);
   }
 }

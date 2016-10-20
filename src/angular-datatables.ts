@@ -1,8 +1,2 @@
-import { NgModule } from '@angular/core';
-import { DataTable } from './angular-datatables.directive';
-
-@NgModule({
-  declarations: [ DataTable ],
-  exports: [ DataTable ]
-})
-export class DataTablesModule {}
+export { DataTablesModule } from './angular-datatables.module';
+export { DataTableDirective } from './angular-datatables.directive';

@@ -9,7 +9,9 @@ export class WithOptionsComponent {
   dtOptions: any = {};
 
   constructor() {
-    this.dtOptions.displayLength = 2;
-    this.dtOptions.paginationType = 'full_numbers';
+    this.dtOptions = {
+      displayLength: 2,
+      paginationType: 'full_numbers'
+    };
   }
 }
