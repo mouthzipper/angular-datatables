@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'with-options',
   templateUrl: 'with-options.component.html'
 })
-export class WithOptionsComponent {
+export class WithOptionsComponent implements OnInit {
   dtOptions: any = {};
 
-  constructor() {
+  ngOnInit(): void {
     this.dtOptions = {
       displayLength: 2,
       paginationType: 'full_numbers'

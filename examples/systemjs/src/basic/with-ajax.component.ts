@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'with-ajax',
   templateUrl: 'with-ajax.component.html'
 })
-export class WithAjaxComponent {
+export class WithAjaxComponent implements OnInit {
   dtOptions: any = {};
 
-  constructor() {
+  ngOnInit(): void {
     this.dtOptions = {
       ajax: 'data.json',
-      ajaxDataProp: '',
       columns: [{
         title: 'ID',
         data: 'id'

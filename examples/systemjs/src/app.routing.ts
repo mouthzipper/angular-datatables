@@ -6,6 +6,8 @@ import { WithOptionsComponent } from './basic/with-options.component';
 import { WithAjaxComponent } from './basic/with-ajax.component';
 
 import { DtInstanceComponent } from './advanced/dt-instance.component';
+import { RowClickEventComponent } from './advanced/row-click-event.component';
+import { RowSelectComponent } from './advanced/row-select.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,14 @@ const routes: Routes = [
   {
     path: 'advanced/dt-instance',
     component: DtInstanceComponent
+  },
+  {
+    path: 'advanced/row-click-event',
+    component: RowClickEventComponent
+  },
+  {
+    path: 'advanced/row-select',
+    component: RowSelectComponent
   }
 ];
 

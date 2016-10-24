@@ -1,3 +1,9 @@
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,7 +26,14 @@ var DataTableDirective = (function () {
         this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
     }
     DataTableDirective.prototype.ngOnInit = function () {
-        this.dtInstance = $(this.el.nativeElement).DataTable(this.dtOptions);
+        // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
+        var DT = $(this.el.nativeElement).DataTable(this.dtOptions);
+        var dt = $(this.el.nativeElement).dataTable();
+        this.dtInstance = {
+            id: $(this.el.nativeElement).attr('id'),
+            DataTable: DT,
+            dataTable: dt
+        };
     };
     __decorate([
         core_1.Input(), 

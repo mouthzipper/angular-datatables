@@ -13,6 +13,8 @@ import { WithAjaxComponent }  from './basic/with-ajax.component';
 
 // Advanced examples
 import { DtInstanceComponent } from './advanced/dt-instance.component';
+import { RowClickEventComponent } from './advanced/row-click-event.component';
+import { RowSelectComponent } from './advanced/row-select.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { DtInstanceComponent } from './advanced/dt-instance.component';
     WithOptionsComponent,
     WithAjaxComponent,
 
-    DtInstanceComponent
+    DtInstanceComponent,
+    RowClickEventComponent,
+    RowSelectComponent
   ],
   bootstrap: [ AppComponent ]
 })

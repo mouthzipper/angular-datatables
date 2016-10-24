@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 import { DataTableDirective } from 'angular-datatables';
 
@@ -7,16 +7,20 @@ import { DataTableDirective } from 'angular-datatables';
   selector: 'dt-instance',
   templateUrl: 'dt-instance.component.html'
 })
-export class DtInstanceComponent {
+export class DtInstanceComponent implements OnInit {
   @ViewChild(DataTableDirective)
   private datatable: DataTableDirective;
 
   dtOptions: any = {};
 
-  constructor() {
+  displayToConsole(): void {
+    debugger;
+    console.log(this.datatable);
+  }
+
+  ngOnInit(): void {
     this.dtOptions = {
       ajax: 'data.json',
-      ajaxDataProp: '',
       columns: [{
         title: 'ID',
         data: 'id'
@@ -28,9 +32,5 @@ export class DtInstanceComponent {
         data: 'lastName'
       }]
     };
-  }
-
-  foobar(): void {
-    console.log(this.datatable);
   }
 }

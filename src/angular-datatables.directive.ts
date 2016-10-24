@@ -1,3 +1,10 @@
+/**
+ * @license
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://raw.githubusercontent.com/l-lin/angular-datatables/master/LICENSE
+ */
+
 import { Directive, ElementRef, Inject, OnInit, Input } from '@angular/core';
 import 'jquery';
 import 'datatables.net';
@@ -7,8 +14,9 @@ declare var $: any;
   selector: '[datatable]'
 })
 export class DataTableDirective implements OnInit {
-  private el: ElementRef;
-
+  /**
+   * The DataTable option you pass to configure your table.
+   */
   @Input()
   dtOptions: any;
 
@@ -20,12 +28,18 @@ export class DataTableDirective implements OnInit {
    */
   dtInstance: any;
 
-  constructor(@Inject(ElementRef) el: ElementRef) {
-    this.el = el;
+  constructor(@Inject(ElementRef) private el: ElementRef) {
     this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
   }
 
   ngOnInit(): any {
-    this.dtInstance = $(this.el.nativeElement).DataTable(this.dtOptions);
+    // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
+    let DT = $(this.el.nativeElement).DataTable(this.dtOptions);
+    let dt = $(this.el.nativeElement).dataTable();
+    this.dtInstance = {
+      id: $(this.el.nativeElement).attr('id'),
+      DataTable: DT,
+      dataTable: dt
+    };
   }
 }
