@@ -9,13 +9,12 @@ import { DataTableDirective } from 'angular-datatables';
 })
 export class DtInstanceComponent implements OnInit {
   @ViewChild(DataTableDirective)
-  private datatable: DataTableDirective;
+  private datatableEl: DataTableDirective;
 
   dtOptions: any = {};
 
   displayToConsole(): void {
-    debugger;
-    console.log(this.datatable);
+    this.datatableEl.dtInstance.then(dtInstance => console.log(dtInstance));
   }
 
   ngOnInit(): void {

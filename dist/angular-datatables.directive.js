@@ -20,20 +20,22 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = require('@angular/core');
 require('jquery');
 require('datatables.net');
+var angular_datatables_dtInstance_1 = require('./angular-datatables.dtInstance');
 var DataTableDirective = (function () {
     function DataTableDirective(el) {
         this.el = el;
         this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
     }
     DataTableDirective.prototype.ngOnInit = function () {
-        // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
-        var DT = $(this.el.nativeElement).DataTable(this.dtOptions);
-        var dt = $(this.el.nativeElement).dataTable();
-        this.dtInstance = {
-            id: $(this.el.nativeElement).attr('id'),
-            DataTable: DT,
-            dataTable: dt
-        };
+        var _this = this;
+        this.dtInstance = new Promise(function (resolve, reject) {
+            Promise.resolve(_this.dtOptions).then(function (dtOptions) {
+                // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
+                var DT = $(_this.el.nativeElement).DataTable(dtOptions);
+                var dt = $(_this.el.nativeElement).dataTable();
+                resolve(new angular_datatables_dtInstance_1.DTInstance($(_this.el.nativeElement).attr('id'), DT, dt));
+            });
+        });
     };
     __decorate([
         core_1.Input(), 

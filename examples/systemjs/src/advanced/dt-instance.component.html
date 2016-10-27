@@ -14,8 +14,8 @@
     <p>
       <button type="button" class="btn btn-primary" (click)="displayToConsole()">Display the DataTable instance in the console</button>
     </p>
-    <p *ngIf="datatable">
-      {{ datatable.dtInstance.id }}
+    <p *ngIf="datatableEl">
+      {{ datatableEl.dtInstance?.id | async }}
     </p>
     <table datatable [dtOptions]="dtOptions" class="row-border hover"></table>
   </section>

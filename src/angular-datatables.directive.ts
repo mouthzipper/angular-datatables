@@ -10,6 +10,8 @@ import 'jquery';
 import 'datatables.net';
 declare var $: any;
 
+import { DTInstance } from './angular-datatables.dtInstance';
+
 @Directive({
   selector: '[datatable]'
 })
@@ -26,20 +28,21 @@ export class DataTableDirective implements OnInit {
    * It's possible to execute the [DataTables APIs](https://datatables.net/reference/api/) with
    * this variable.
    */
-  dtInstance: any;
+  dtInstance: Promise<DTInstance>;
 
-  constructor(@Inject(ElementRef) private el: ElementRef) {
+  constructor( @Inject(ElementRef) private el: ElementRef) {
     this.dtOptions = $.extend(true, {}, $.fn.DataTable.defaults);
   }
 
   ngOnInit(): any {
-    // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
-    let DT = $(this.el.nativeElement).DataTable(this.dtOptions);
-    let dt = $(this.el.nativeElement).dataTable();
-    this.dtInstance = {
-      id: $(this.el.nativeElement).attr('id'),
-      DataTable: DT,
-      dataTable: dt
-    };
+    this.dtInstance = new Promise((resolve, reject) => {
+      Promise.resolve(this.dtOptions).then(dtOptions => {
+        // See http://datatables.net/manual/api#Accessing-the-API to understand the difference between DataTable and dataTable
+        let DT = $(this.el.nativeElement).DataTable(dtOptions);
+        let dt = $(this.el.nativeElement).dataTable();
+
+        resolve(new DTInstance($(this.el.nativeElement).attr('id'), DT, dt));
+      });
+    });
   }
 }

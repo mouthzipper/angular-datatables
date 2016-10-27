@@ -12,3 +12,4 @@
  */
 export { DataTablesModule } from './angular-datatables.module';
 export { DataTableDirective } from './angular-datatables.directive';
+export { DTInstance } from './angular-datatables.dtInstance';

@@ -7,6 +7,7 @@
 import { ElementRef, OnInit } from '@angular/core';
 import 'jquery';
 import 'datatables.net';
+import { DTInstance } from './angular-datatables.dtInstance';
 export declare class DataTableDirective implements OnInit {
     private el;
     /**
@@ -19,7 +20,7 @@ export declare class DataTableDirective implements OnInit {
      * It's possible to execute the [DataTables APIs](https://datatables.net/reference/api/) with
      * this variable.
      */
-    dtInstance: any;
+    dtInstance: Promise<DTInstance>;
     constructor(el: ElementRef);
     ngOnInit(): any;
 }
