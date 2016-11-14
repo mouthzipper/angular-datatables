@@ -993,6 +993,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
             }
 
             function reloadData(callback, resetPaging) {
+                 DTRendererService.showLoading(_$elem, _$scope);
                 var previousPage = _oTable && _oTable.page() ? _oTable.page() : 0;
                 if (angular.isFunction(renderer.options.fnPromise)) {
                     _resolve(renderer.options.fnPromise, _redrawRows).then(function(result) {
